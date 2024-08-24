@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="estate_property_view_search" model="ir.ui.view">
+            <field name="name">Estate Search</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <search string="Estate Search View">
+                    <filter name="Postal Code Is Set" domain="[('postcode', '&gt;', 0)]" />
+                    <field name="name" />
+                    <field name="postcode" />
+                </search>
+            </field>
+        </record>
+        <record id="estate_property_view_tree" model="ir.ui.view">
+            <field name="name">Estate Field</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <tree string="Estate View Tree">
+                    <field name="name" />
+                    <field name="postcode" />
+                    <field name="date_availability" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+        <record id="estate_property_view_form" model="ir.ui.view">
+            <field name="name">Estate Form</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <form string="Estate View Form">
+                    <header>
+                        <button name="action_sold" type="object" string="Sold"
+                            invisible="state=='canceled' or state=='sold' or state=='offer_accepted'" />
+                        <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state=='canceled' or state=='sold' or state=='offer_accepted'" />
+                        <button name="action_send_email" type="object" string="Send Email" />
+                        <field name="state" widget="statusbar"
+                            statusbar_visible="new,offer_received,offer_accepted,sold" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="postcode" />
+                            <field name="date_availability" />
+                            <field name="expected_price" />
+                            <field name="facades" />
+                            <field name="garage" />
+                        </group>
+                        <group>
+                            <field name="garden" />
+                            <field name="garden_area" />
+                            <field name="selling_price" />
+                            <field name="bedrooms" />
+                            <field name="living_area" />
+                            <field name="last_seen" />
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <group>
+                                    <field name="description" />
+                                    <field name="garden_orientation" />
+                                </group>
+                            </page>
+                            <page string="Total Area">
+                                <group>
+                                    <field name="total_area" />
+                                    <field name="state" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
