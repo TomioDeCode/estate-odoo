@@ -26,17 +26,20 @@ The Estate module is a feature-rich application designed for managing real estat
    ```bash
    git clone <repository-url> /path/to/odoo/custom/addons/estate
 
-    Update Odoo Configuration:
+2. **Update Odoo Configuration:**
     Ensure your odoo.conf includes the path to your custom addons:
 
     plaintext
-
+   
+    ```bash
     addons_path = /path/to/odoo/addons,/path/to/odoo/custom/addons
-
+3. **Install the Module**:
     Install the Module:
+   
+    ```bash
     Restart the Odoo server, navigate to the Apps menu, click on "Update Apps List," search for "Estate," and install it.
 
-Usage Instructions
+## Usage Instructions
 
     Properties: Create and manage properties by filling in necessary details.
     Property Types: Define and manage various property types through the designated menu.
@@ -44,7 +47,7 @@ Usage Instructions
     Property Tags: Create and assign tags to properties for categorization.
     Email Notifications: Use sample templates for property-related notifications.
 
-Dependencies
+## Dependencies
 
     base
     mail
@@ -52,16 +55,26 @@ Dependencies
 Ensure these dependencies are installed in your Odoo environment.
 Security
 
+## Security
+
 The module includes a security file (ir.model.access.csv) to define user access rights. Review and adjust these settings as needed.
 Scheduled Actions
+
+## Scheduled Actions
 
 The module features sample schedulers for automating tasks related to property management. Verify the scheduler settings align with your needs.
 Contributing
 
+## Contributing
+
 To contribute, fork the repository and submit a pull request. For significant changes, initiate a discussion by opening an issue.
 License
 
+## License
+
 The Estate module is licensed under the MIT License. Refer to the LICENSE file for detailed information.
 Contact
+
+## Contact
 
 For queries or suggestions, reach out to the author at tomiodecode@gmail.com.
