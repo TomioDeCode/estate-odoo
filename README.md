@@ -1,68 +1,67 @@
-Estate Module
+# Estate Module
 
-Version: 1.0
-Author: TomioDeCode
-Category: App
-Odoo Version: 17.0
-Description
+**Version:** 1.0  
+**Author:** TomioDeCode  
+**Category:** App  
+**Odoo Version:** 17.0
 
-The Estate module is designed to provide a simple application for managing estate properties, property types, property offers, and property tags. This module is created as a learning exercise to demonstrate the basic concepts of Odoo 17 module development.
-Features
+## Description
 
-    Manage estate properties.
-    Manage property types.
-    Manage property offers.
-    Manage property tags.
-    Basic workflows for property offers and statuses.
-    Simple email notification templates for property-related events.
-    Schedulers for periodic tasks related to property management.
+The Estate module is a feature-rich application designed for managing real estate properties, property types, offers, and tags within the Odoo 17 environment. This module serves as a learning exercise for understanding the basics of Odoo 17 module development. Below is a concise summary of its key components and usage:
 
-Installation
+## Features
 
-    Clone the Module: Place the estate directory in your Odoo custom addons directory.
+1. **Estate Properties Management:** Create, update, and manage various estate properties with details such as name, description, location, and price.
+2. **Property Types:** Define and categorize properties (e.g., apartment, house, villa).
+3. **Property Offers:** Track and manage property offers, including accepting, refusing, and monitoring offer statuses.
+4. **Property Tags:** Create tags for better property categorization and search functionality.
+5. **Basic Workflows:** Implement simple workflows for managing property offers and statuses.
+6. **Email Notifications:** Utilize simple email templates for notifications related to property events.
+7. **Schedulers:** Set up automated tasks for property management.
 
-    bash
+## Installation Steps
 
-git clone <repository-url> /path/to/odoo/custom/addons/estate
+1. **Clone the Module:**  
+   Place the `estate` directory into your Odoo custom addons directory using the following command:
+   ```bash
+   git clone <repository-url> /path/to/odoo/custom/addons/estate
 
-Update the Odoo Configuration: Make sure your Odoo configuration file (odoo.conf) includes the path to your custom addons directory:
+    Update Odoo Configuration:
+    Ensure your odoo.conf includes the path to your custom addons:
 
-plaintext
+    plaintext
 
     addons_path = /path/to/odoo/addons,/path/to/odoo/custom/addons
 
-    Install the Module: Restart the Odoo server and go to the Apps menu. Click on the "Update Apps List" button. Search for Estate and install it.
+    Install the Module:
+    Restart the Odoo server, navigate to the Apps menu, click on "Update Apps List," search for "Estate," and install it.
 
-Usage
+Usage Instructions
 
-    Properties: Go to the Estate app and start by creating new properties. Fill in the details such as name, description, location, and price.
-
-    Property Types: Define different property types (e.g., apartment, house, villa) using the Property Types menu.
-
-    Property Offers: Manage offers for properties. You can accept or refuse offers, and track the status of each offer.
-
-    Property Tags: Create and assign tags to properties for better categorization and searching.
-
-    Email Notifications: The module includes a sample email template for notifications related to property events.
+    Properties: Create and manage properties by filling in necessary details.
+    Property Types: Define and manage various property types through the designated menu.
+    Property Offers: Handle offers, accept or refuse them, and track their status.
+    Property Tags: Create and assign tags to properties for categorization.
+    Email Notifications: Use sample templates for property-related notifications.
 
 Dependencies
 
     base
     mail
 
-Make sure these modules are installed and available in your Odoo environment.
+Ensure these dependencies are installed in your Odoo environment.
 Security
 
-The module includes a security file (ir.model.access.csv) to define access rights and roles for different user groups. Review and customize these settings based on your requirements.
+The module includes a security file (ir.model.access.csv) to define user access rights. Review and adjust these settings as needed.
 Scheduled Actions
 
-The module includes sample schedulers that automate periodic tasks related to property management. Check the scheduler settings to ensure they meet your needs.
+The module features sample schedulers for automating tasks related to property management. Verify the scheduler settings align with your needs.
 Contributing
 
-If you wish to contribute to the development of this module, feel free to fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
+To contribute, fork the repository and submit a pull request. For significant changes, initiate a discussion by opening an issue.
 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+The Estate module is licensed under the MIT License. Refer to the LICENSE file for detailed information.
 Contact
 
-For any questions or suggestions, please contact the author at: tomiodecode@gmail.com
+For queries or suggestions, reach out to the author at tomiodecode@gmail.com.
