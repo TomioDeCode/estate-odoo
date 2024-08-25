@@ -28,8 +28,6 @@ The Estate module is a feature-rich application designed for managing real estat
 
 2. **Update Odoo Configuration:**
     Ensure your odoo.conf includes the path to your custom addons:
-
-    plaintext
    
     ```bash
     addons_path = /path/to/odoo/addons,/path/to/odoo/custom/addons
