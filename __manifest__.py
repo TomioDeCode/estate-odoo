@@ -24,6 +24,9 @@
         'views/schedulers/estate_property_scheduler.xml',
         
         # Template
-        'data/templates/example_email_template.xml'
+        'data/templates/example_email_template.xml',
+        
+        # Report
+        'views/reports/ouput_pdf/estate_property.xml'
     ]
 }
