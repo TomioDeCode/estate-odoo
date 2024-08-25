@@ -70,6 +70,13 @@ class EstateProperty(models.Model):
     last_seen = fields.Datetime("Last Seen", default=fields.Datetime.now)
     total_area = fields.Integer(readonly=True, compute="_compute_total_area")
     
+    user_id = fields.Many2one("res.users", string="Salesman", default=lambda self: self.env.user)
+    buyer_id = fields.Many2one("res.partner", string="Buyer", readonly=True, copy=False)
+    
+    property_type_id = fields.Many2one("estate.property.type", string="Property Type")
+    offer_ids = fields.One2many("estate.property.offer", "property_id", string="Offers")
+    tag_ids = fields.Many2many("estate.property.tag", string="Tags")
+    
     state = fields.Selection(
         selection=[
             ("new", "New"),

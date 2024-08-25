@@ -18,6 +18,7 @@
             <field name="arch" type="xml">
                 <tree string="Estate View Tree">
                     <field name="name" />
+                    <field name="property_type_id" />
                     <field name="postcode" />
                     <field name="date_availability" />
                     <field name="state" />
@@ -40,14 +41,18 @@
                     </header>
                     <sheet>
                         <group>
+                            <field name="property_type_id"
+                                options="{'no_create': True, 'no_edit': True}" />
+                            <field name="tag_ids" widget="many2many_tags"
+                                options="{'color_field': 'color'}" />
                             <field name="name" />
                             <field name="postcode" />
                             <field name="date_availability" />
                             <field name="expected_price" />
-                            <field name="facades" />
-                            <field name="garage" />
                         </group>
                         <group>
+                            <field name="facades" />
+                            <field name="garage" />
                             <field name="garden" />
                             <field name="garden_area" />
                             <field name="selling_price" />
@@ -57,21 +62,33 @@
                         </group>
                         <notebook>
                             <page string="Description">
+                                <field name="description" />
+                                <label for="garden_orientation" string="Garden Orientation" />
+                                <field name="garden_orientation" />
+                            </page>
+                            <page string="PIC And Customers">
                                 <group>
-                                    <field name="description" />
-                                    <field name="garden_orientation" />
+                                    <field name="user_id" />
+                                    <field name="buyer_id" />
                                 </group>
                             </page>
                             <page string="Total Area">
-                                <group>
-                                    <field name="total_area" />
-                                    <field name="state" />
-                                </group>
+                                <field name="total_area" />
+                                <field name="state" />
+                            </page>
+                            <page string="Offers">
+                                <field name="offer_ids"
+                                    readonly="state=='offer_accepted' or state=='sold' or state=='canceled'" />
                             </page>
                         </notebook>
                     </sheet>
                 </form>
             </field>
+        </record>
+        <record id="estate_property_action" model="ir.actions.act_window">
+            <field name="name">Estate Property</field>
+            <field name="res_model">estate.property</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
     </data>
 </odoo>

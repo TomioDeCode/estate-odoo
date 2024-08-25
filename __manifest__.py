@@ -7,9 +7,15 @@
     'description': """ This is module is used to learn basic odoo 17 """,
     'application': True,
     'data': [
+        # Security
         'security/ir.model.access.csv',
-        'views/menu.xml',
+        
+        # Views
         'views/estate_property.xml',
+        'views/estate_property_type.xml',
+        'views/estate_property_offer.xml',
+        'views/estate_property_tag.xml',
+        'views/menu.xml',
         
         # Load initial Data
         'data/estate.property.csv',
